@@ -35,7 +35,7 @@ class ParameterTypeDeterminer {
         && method == HttpMethod.POST) {
       parameterType = "form";
     } else if (consumes.contains(MediaType.MULTIPART_FORM_DATA)
-        && method == HttpMethod.POST) {
+        && (method == HttpMethod.POST || method == HttpMethod.PATCH)) {
       parameterType = "formData";
     }
 
